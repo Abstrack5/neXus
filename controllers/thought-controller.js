@@ -2,7 +2,6 @@ const { Thought } = require('../models');
 
 const thoughtController = {
     ///api/thoughts
-
     // GET to get all thoughts
 
     // GET to get a single thought by its _id
@@ -12,7 +11,6 @@ const thoughtController = {
 
 
     // /api/thoughts/:thoughtId/reactions
-
     // POST to create a reaction stored in a single thought's reactions array field
 
     // DELETE to pull and remove a reaction by the reaction's reactionId value
