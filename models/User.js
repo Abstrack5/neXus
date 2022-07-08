@@ -14,7 +14,8 @@ const UserSchema = newSchema({
     match: [/^[\w-\.]+@([\w-]+\.)+[\w-]{2,3}$/]
    },
    thoughts: {
-
+    type: Schema.Types.ObjectId,
+    ref: 'Thought'
    },
    friends: {
     type: Schema.Types.ObjectId,
