@@ -47,11 +47,35 @@ const thoughtController = {
     },
 
 
-    // /api/thoughts/:thoughtId/reactions
+    // /api/thoughts/:userId/:thoughtId
     // POST to create a reaction stored in a single thought's reactions array field
+    addReaction({ params, body }, res) {
+        Thought.findOneAndUpdate(
+            { _id: params.thoughtId },
+            { $push: { reactions: body}},
+            { new: true, runValidators: true }
+        )
+        .then(dbThought => {
+            if(!dbThought) {
+                return res.status(404).json({ message: 'Thought not found'})
+            } else {
+                res.json(dbThought);
+            }
+        })
+        .catch(err => res.json(err));
+    },
 
     // DELETE to pull and remove a reaction by the reaction's reactionId value
-
+    // api/thoughts/:thoughtId/:reactionId
+    deleteReaction({ params, body }, res) {
+        Thought.findOneAndUpdate(
+            { _id: params.thoughtsId },
+            { $pull: { reactions: body}},
+            { new: true, runValidators: true }
+        )
+        .then(dbThought => res.json(dbThought))
+        .catch(err => res.json(err));
+    },
 
 
     // PUT to update a thought by its _id
