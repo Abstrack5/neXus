@@ -29,7 +29,7 @@ View demo [_here_](https://drive.google.com/file/d/1wXtrBUhgDWnY_ZKDCM8gQ6bZkRLz
  ````
 
 
-##  Copyright ![Github](https://img.shields.io/github/license/abstrack5/neXus)
+## Copyright ![Github](https://img.shields.io/github/license/abstrack5/neXus)
 Copyright (c) 2022 AAhmadi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
